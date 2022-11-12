@@ -9,7 +9,6 @@
 
 * Cntroller
 * Random level generation
-* Saving the highest score
 
 
 ### Links
