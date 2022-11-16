@@ -1,23 +1,47 @@
+using System;
 using UnityEngine;
 
 public class JumpSphere : MonoBehaviour
 {
+    public static event Action<bool> ActionIsDie;
+
+    [SerializeField]private GenerationLevel _generationLevel;
+
     private Bank _bank;
-    private GenerationLevel _generationLevel;
+    private Rigidbody _rb;
 
+    [HideInInspector]public int _counterPassed = 0;
 
-    private void Start()
+    private float _jumpForce = 6;
+    private void Awake()
     {
         _bank = new Bank();
-        _generationLevel = new GenerationLevel();
+        _rb = GetComponent<Rigidbody>();
     }
-    public void OnTriggerEnter(Collider other)
+    private void Start()
+    {  
+        IsAlive(true);
+    }
+    public bool IsAlive(bool state)
     {
-        if (other.gameObject.tag == "Counter")
-        {
-            _bank.AddScore(_generationLevel.Level);
-            Destroy(other.gameObject);
-        }
+        ActionIsDie?.Invoke(state);
+        return state;
+    }
+    public void Jump()
+    {
+        _counterPassed = 0;
 
+        Vector3 velocity = _rb.velocity;
+        velocity.y = _jumpForce;
+        _rb.velocity = velocity;
+        
+    }
+    public void CounterPassed()
+    {
+        if (_counterPassed > 2)
+        {
+            _bank.AddScore(FallingMultiplyScore.MultiplyScore(_generationLevel.ScorePerLevel, _counterPassed));
+        }
+        else _bank.AddScore(_generationLevel.ScorePerLevel);
     }
 }

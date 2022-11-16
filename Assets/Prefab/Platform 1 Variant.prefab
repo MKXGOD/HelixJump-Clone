@@ -145,8 +145,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 163069712168122429, guid: e26907fb22e187e448047156d97b60af, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 416219988897919161, guid: e26907fb22e187e448047156d97b60af, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897284839746517898, guid: e26907fb22e187e448047156d97b60af, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1307554308934057863, guid: e26907fb22e187e448047156d97b60af, type: 3}
@@ -156,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 1618993936867644046, guid: e26907fb22e187e448047156d97b60af, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826331852115653870, guid: e26907fb22e187e448047156d97b60af, type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3972480634466713466, guid: e26907fb22e187e448047156d97b60af, type: 3}
       propertyPath: m_RootOrder
@@ -241,6 +253,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5706955289738368636, guid: e26907fb22e187e448047156d97b60af, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745036800498827927, guid: e26907fb22e187e448047156d97b60af, type: 3}
       propertyPath: m_Convex
       value: 0
@@ -253,6 +269,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d1ad4b0576a1b354a806571ee0fac13e, type: 2}
+    - target: {fileID: 5899577924107353804, guid: e26907fb22e187e448047156d97b60af, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5947650009096663083, guid: e26907fb22e187e448047156d97b60af, type: 3}
       propertyPath: m_Enabled
       value: 1

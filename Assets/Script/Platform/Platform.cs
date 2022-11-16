@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    private float _jumpForce;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.y <= 0)
-        { 
-            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            { 
-                Vector3 velocity = rb.velocity;
-                velocity.y = _jumpForce;
-                rb.velocity = velocity;
-            }
+        if (this.gameObject.tag == "Gray")
+        {
+            var _jumpSphere = collision.gameObject.GetComponent<JumpSphere>();
+            _jumpSphere.Jump();
         }
+        else
+        {
+            var _jumpSphere = collision.gameObject.GetComponent<JumpSphere>();
+            _jumpSphere.IsAlive(false);
+        }
+        
     }
 }

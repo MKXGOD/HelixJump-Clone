@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EndLevel : MonoBehaviour
 {
     [SerializeField] private GameObject FinishPanel, RestartPanel;
-    [SerializeField] private Text LevelNumber, Score;
+    [SerializeField] private Text Score;
 
     private GenerationLevel _generationLevel;
 
@@ -17,11 +17,13 @@ public class EndLevel : MonoBehaviour
     {
         FinishPlatform.ActionFinished += FinishMenu;
         Bank.ActionScoreAdd += SetScore;
+        JumpSphere.ActionIsDie += RestartMenu;
     }
     private void OnDisable()
     {
         FinishPlatform.ActionFinished -= FinishMenu;
         Bank.ActionScoreAdd -= SetScore;
+        JumpSphere.ActionIsDie -= RestartMenu;
     }
     public void SetScore(int ScoreAmount)
     {
@@ -31,7 +33,6 @@ public class EndLevel : MonoBehaviour
     {
         Time.timeScale = 0;
         FinishPanel.SetActive(true);
-        LevelNumber.text = "Level: ";
     }
     public void NextLevelButton()
     {
@@ -39,10 +40,13 @@ public class EndLevel : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         Time.timeScale = 1;
     }
-    public void RestartMenu()
+    public void RestartMenu(bool state)
     {
-        Time.timeScale = 0;
-        RestartPanel.SetActive(true);
+        if (state != true)
+        {
+            Time.timeScale = 0;
+            RestartPanel.SetActive(true);
+        }
     }
     public void RestartButton()
     {

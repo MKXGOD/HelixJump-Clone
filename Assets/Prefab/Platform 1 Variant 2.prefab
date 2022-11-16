@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7326726403585757858, guid: 16c081763ce76d9479b1887e2babf5ca, type: 3}
+      propertyPath: _jumpForce
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7357687842586022799, guid: 16c081763ce76d9479b1887e2babf5ca, type: 3}
       propertyPath: m_IsActive
       value: 0

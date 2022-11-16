@@ -4,7 +4,7 @@ public class Destroyer : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject != null)
+        if(other.gameObject.tag == "Red" || other.gameObject.tag == "Gray")
             Destroy(other.gameObject);
     }
 }

@@ -4,8 +4,9 @@ public class GenerationLevel : MonoBehaviour
 {
     [SerializeField] private GameObject[] _platform;
 
-    public int Level { get => PlayerPrefs.GetInt("CountPlatdorm", 0); private set => PlayerPrefs.SetInt("CountPlatdorm", (int)value); }
+    public int Level { get => PlayerPrefs.GetInt("CountPlatform", 1); private set => PlayerPrefs.SetInt("CountPlatform", (int)value); }
 
+    public int ScorePerLevel => Level;
     private int _countPlatform;
     private float _distancePlatform = 4;
     private float _spawnHeight = 0;
@@ -28,7 +29,6 @@ public class GenerationLevel : MonoBehaviour
         platform.transform.parent = transform;
         _spawnHeight -= _distancePlatform;
     }
-
     public void IncreaseLevel()
     {
         Level++;
